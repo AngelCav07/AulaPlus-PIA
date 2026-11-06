@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: aulaplus_api
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    volumes:
+      - ./aulaplus.db:/app/aulaplus.db
+
+  tests:
+    build: .
+    container_name: aulaplus_tests
+    command: pytest --cov=src --cov-report=term-missing
+    depends_on:
+      - web

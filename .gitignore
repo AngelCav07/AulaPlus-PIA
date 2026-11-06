@@ -1,0 +1,10 @@
+
+__pycache__/
+*.py[cod]
+.coverage
+coverage/
+htmlcov/
+*.db
+*.sqlite3
+.venv/
+
